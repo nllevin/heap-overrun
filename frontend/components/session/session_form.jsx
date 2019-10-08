@@ -23,8 +23,12 @@ class SessionForm extends React.Component {
 
   render() {
     const { errors, formType } = this.props;
+    const headerText = formType === "signup" ?
+      <h1>Create your Heap Overrun account. It's free and only takes a minute.</h1>
+      : <img src={window.soIconURL}/>;
+
     const errorsList = (
-      <ul>
+      <ul className="errors">
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
     );
@@ -40,9 +44,10 @@ class SessionForm extends React.Component {
       <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
 
     return (
-      <div>
-        {errorsList}
+      <div className="content session-form">
+        {headerText}
         <form onSubmit={this.handleSubmit}>
+          {errorsList}
           {formType === "signup" ? usernameInput : ""}
           <label>Email
             <input type="text" value={this.state.email} onChange={this.update("email")} />
@@ -50,7 +55,7 @@ class SessionForm extends React.Component {
           <label>Password
             <input type="password" value={this.state.password} onChange={this.update("password")} />
           </label>
-          <button>{formType === "signup" ? "Sign up" : "Log in"}</button>
+          <button className="button">{formType === "signup" ? "Sign up" : "Log in"}</button>
         </form>
         {otherChoice}
       </div>

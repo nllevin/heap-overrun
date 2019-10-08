@@ -1,0 +1,44 @@
+.greeting {
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
+  height: 100%;
+}
+
+.avatar {
+  width: 25px;
+  height: 25px;
+  color: white;
+  background-color: #34495e;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 5px;
+}
+
+.avatar:hover {
+  background-color: #34495e;
+}
+
+.stack-exchange {
+  background-image: url("<%= image_url('stack-exchange') %>");
+  background-size: 28px 18px;
+  height: 18px;
+  width: 28px;
+  filter: grayscale(1);
+  margin: 0 4px;
+}
+
+.greeting .button:first-of-type {
+  color: #07C;
+  background-color: transparent;
+  border: transparent;
+  box-shadow: none;
+  margin-right: 3px;
+}
+
+.greeting .button:first-of-type:hover {
+  color: #005999;
+  background-color: rgba(0, 119, 204, 0.1);
+}
