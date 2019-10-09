@@ -21,8 +21,14 @@ html, body, #root, #root > div {
 body {
   padding-top: 50px;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  background-color: #eff0f1;
   box-sizing: border-box;
+}
+
+.main-container {
+  max-width: 1264px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
 }
 
 .content {
