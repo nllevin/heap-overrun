@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const { errors, formType } = this.props;
+    const { errors, formType, demoLogin } = this.props;
     const headerText = formType === "signup" ?
       <h1>Create your Heap Overrun account. It's free and only takes a minute.</h1>
       : <img src={window.soIconURL}/>;
@@ -56,6 +56,7 @@ class SessionForm extends React.Component {
             <input type="password" value={this.state.password} onChange={this.update("password")} />
           </label>
           <button className="button">{formType === "signup" ? "Sign up" : "Log in"}</button>
+          <a className="button" onClick={demoLogin}>Log in as demo user</a>
         </form>
         {otherChoice}
       </div>
