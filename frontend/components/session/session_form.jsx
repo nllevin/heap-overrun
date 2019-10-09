@@ -44,7 +44,7 @@ class SessionForm extends React.Component {
       <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
 
     return (
-      <div className="content session-form">
+      <div className="session-form">
         {headerText}
         <form onSubmit={this.handleSubmit}>
           {errorsList}

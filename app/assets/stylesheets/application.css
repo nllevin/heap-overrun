@@ -24,17 +24,6 @@ body {
   box-sizing: border-box;
 }
 
-.main-container {
-  max-width: 1264px;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-}
-
-.content {
-  padding: 24px;
-}
-
 .button {
   color: white;
   background-color: #0095ff;
