@@ -1,5 +1,5 @@
 head, body, main, div, header, 
-h1, p, a, ul, li, strong, i, span,
+h1, h2, h3, p, a, ul, li, strong, i, span,
 form, label, input, button {
   margin: 0;
   padding: 0;

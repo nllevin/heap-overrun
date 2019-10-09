@@ -1,0 +1,98 @@
+.communities-dropdown {
+  position: absolute;
+  top: 47px;
+  right: 0px;
+  width: 375px;
+  background-color: white;
+  color: #18529A;
+  font-size: 11px;
+  box-shadow: 0 2px 2px rgba(12, 13, 14, 0.2);
+  border: 1px solid #e4e6e8;
+  border-bottom: none;
+  cursor: default;
+}
+
+.communities-dropdown h3 {
+  background-color: #eff0f1;
+  width: 100%;
+  padding: 8px 10px;
+  font-weight: 700;
+}
+
+.communities-dropdown h3 a {
+  display: inline-block;
+}
+
+.communities-dropdown .so-icon {
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  background-position: 0px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.communities-dropdown a {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.communities-dropdown li {
+  display: flex;
+  align-items: center;
+  padding: 3px 7px;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.communities-dropdown > ul:first-of-type > li:first-of-type {
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.community:first-of-type > li:first-of-type > a {
+  width: 235px;
+}
+
+.community {
+  width: 100%;
+  margin: 1px 0;
+}
+
+.community li:hover {
+  background-color: #f7f8f8;
+}
+
+.community:first-of-type {
+  background-color: #f6fcff;
+  border-left: 3px solid #2f96e8;
+}
+
+.community:first-of-type li:hover {
+  background-color: #e8f3fa;
+}
+
+.community-links {
+  display: flex;
+}
+
+.community-links li {
+  font-weight: 400;
+  color: #0077CC;
+  margin-left: 12px;
+  display: inline;
+  padding: 0;
+}
+
+.l-icon {
+  width: 10px;
+  height: 10px;
+  border: solid #b9c1c5;
+  border-width: 0 0 1px 1px;
+  margin: 0 6px;
+}
+
+.your-community a {
+  width: 100%;
+}
