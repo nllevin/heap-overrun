@@ -20,6 +20,9 @@ class Api::QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    unless @question
+      render json: "Sorry, question not found", status: 404
+    end
   end
 
   def index

@@ -13,7 +13,7 @@ class QuestionIndex extends React.Component {
     const { questions } = this.props;
 
     if (!questions) {
-      return <div>No questions to display</div>;
+      return <h1>No questions to display</h1>;
     }
 
     const questionItems = questions.map(question => (
@@ -36,7 +36,6 @@ class QuestionIndex extends React.Component {
           <SideBar />
         </main>
       </div>
-      
     );
   }
 }

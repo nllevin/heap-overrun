@@ -1,20 +1,7 @@
 .question-index {
-  width: 100%;
   flex: 1 1;
 }
 
 .question-index header {
-  display: flex;
-  justify-content: space-between;
   padding: 0 0 24px 24px;
-  border-bottom: 1px solid #d6d9dc;
-}
-
-.question-index h1 {
-  font-size: 27px;
-}
-
-.question-index .button {
-  padding: 10.4px;
-  line-height: 15px;
 }
