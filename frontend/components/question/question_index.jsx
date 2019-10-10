@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import QuestionIndexItem from "./question_index_item";
+import SideNav from "../side_nav";
+import SideBar from "../side_bar";
 
 class QuestionIndex extends React.Component {
   componentDidMount() {
@@ -19,15 +21,22 @@ class QuestionIndex extends React.Component {
     ));
 
     return (
-      <div className="question-index">
-        <header>
-          <h1>Top Questions</h1>
-          <Link to="/questions/new" className="button">Ask Question</Link>
-        </header>
-        <ul>
-          {questionItems}
-        </ul>
+      <div className="main-content">
+        <SideNav />
+        <main className="main-content-container">
+          <section className="question-index">
+            <header>
+              <h1>Top Questions</h1>
+              <Link to="/questions/new" className="button">Ask Question</Link>
+            </header>
+            <ul>
+              {questionItems}
+            </ul>
+          </section> 
+          <SideBar />
+        </main>
       </div>
+      
     );
   }
 }
