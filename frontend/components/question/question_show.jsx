@@ -9,16 +9,16 @@ class QuestionShow extends React.Component {
   }
 
   render() {
-    const { question } = this.props;
+    const { question, author } = this.props;
 
     if (!question) {
       return null;
     }
 
     return (
-      <div className="main-content question-show">
+      <div className="main-content">
         <SideNav />
-        <div>
+        <div className="question-show">
           <header>
             <h1>{question.title}</h1>
             <Link to="/questions/new" className="button">Ask Question</Link>
@@ -28,15 +28,26 @@ class QuestionShow extends React.Component {
             <span>Viewed<strong>8 times</strong></span>
           </div>
           <main className="main-content-container">
-            <section>
-              <aside className="vote-box">
-                <i className="up-arrow"></i>
-                <span>0</span>
-                <i className="down-arrow"></i>
-              </aside>
-              <p>
-                {question.body}
-              </p>
+            <section className="question-container">
+              <div className="question-show-main">
+                <aside className="vote-box">
+                  <i className="up-arrow"></i>
+                  <span>0</span>
+                  <i className="down-arrow"></i>
+                </aside>
+                <p>
+                  {question.body}
+                </p>
+              </div>
+              <footer>
+                <div className="question-signature">
+                  <p>asked 1 min ago</p>
+                  <div>
+                    <i className="avatar">K</i>
+                    <p>Kitty</p>
+                  </div>
+                </div>
+              </footer>
             </section>
             <SideBar />
           </main>

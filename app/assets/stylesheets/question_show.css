@@ -1,6 +1,6 @@
-.question-show > div {
+div.question-show {
   padding: 24px;
-  width: 100%;
+  flex: 1 1;
 }
 
 .question-show header {
@@ -8,8 +8,14 @@
   border-bottom: none;
 }
 
-.question-show section {
+.question-container {
   flex: 1 1;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #d6d9dc;
+  height: fit-content;
+}
+
+.question-show-main {
   display: flex;
 }
 
@@ -71,4 +77,41 @@
   padding: 5px 0;
   font-size: 21px;
   color: #6a737c;
+}
+
+.question-show footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.question-signature {
+  padding: 5px 6px 7px 7px;
+  margin: 4px 0;
+  width: 200px;
+  color: #6a737c;
+  border-radius: 3px;
+  background-color: #E1ECF4;
+}
+
+.question-signature p {
+  padding: 0;
+  margin: 1px 0 4px;
+  font-size: 12px;
+}
+
+.question-signature > div {
+  display: flex;
+}
+
+.question-signature .avatar {
+  width: 32px;
+  height: 32px;
+  margin: 0 8px 0 0;
+  border-radius: 0px;
+  font-size: 16px;
+}
+
+.question-signature div p {
+  font-size: 13px;
+  color: #07C;
 }
