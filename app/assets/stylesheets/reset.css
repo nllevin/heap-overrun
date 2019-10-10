@@ -1,6 +1,6 @@
-head, body, main, div, header, 
-h1, h2, h3, p, a, ul, li, strong, i, span,
-form, label, input, button {
+head, body, main, div, header, aside,
+h1, h2, h3, h4, p, a, ul, ol, li, strong, i, 
+span, form, label, input, button, textarea {
   margin: 0;
   padding: 0;
   border: 0;

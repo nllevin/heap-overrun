@@ -4,10 +4,10 @@ import Root from "./components/root";
 
 // For testing only:
 import configureStore from "./store/store";
-import { login } from "./actions/session_actions";
+import * as QuestionActions from "./actions/question_actions";
 ///////////////////
 
-document .addEventListener("DOMContentLoaded", () =>{
+document.addEventListener("DOMContentLoaded", () =>{
   let preloadedState;
   if (window.currentUser) {
     const currentUser = window.currentUser;
@@ -17,7 +17,7 @@ document .addEventListener("DOMContentLoaded", () =>{
       },
       session: { currentUserId: currentUser.id }
     };
-    delete window[currentUser];
+    delete window.currentUser;
   }
   const store = configureStore(preloadedState);
   const root = document.getElementById("root");
@@ -26,6 +26,6 @@ document .addEventListener("DOMContentLoaded", () =>{
   // For testing only:
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.login = login;
+  window.QuestionActions = QuestionActions;
   ////////////////////
 });

@@ -1,0 +1,7 @@
+.question-index {
+  flex: 1 1;
+}
+
+.question-index header {
+  padding: 0 0 24px 24px;
+}
