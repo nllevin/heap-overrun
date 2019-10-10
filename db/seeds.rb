@@ -6,6 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Question.destroy_all
 User.destroy_all
 
 demo_user = User.create(username: "Demo User", email: "demo@user.com", password: "password")
+
+5.times do 
+  user = User.create(
+    username: Faker::GreekPhilosophers.unique.name, 
+    email: Faker::Internet.unique.email,
+    password: "password"
+  )
+
+  5.times do
+    user.questions.create(
+      title: Faker::TvShows::DumbAndDumber.unique.quote,
+      body: Faker::Lorem.paragraphs(number: 9).join("\n")
+    )
+  end
+end
