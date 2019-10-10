@@ -19,7 +19,6 @@
   text-align: center;
   color: #848D95;
   font-size: 11px;
-  margin-bottom: 4px;
   line-height: 14px;
   padding: 0 5px;
 }
@@ -28,6 +27,7 @@
   font-size: 17px;
   color: #6A737C;
   line-height: 21.5px;
+  margin-bottom: 4px;
 }
 
 .question-main {

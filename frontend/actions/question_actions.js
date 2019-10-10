@@ -38,7 +38,10 @@ export const fetchQuestion = id => dispatch => (
 export const createQuestion = question => dispatch => (
   QuestionAPIUtil.createQuestion(question)
     .then(
-      question => dispatch(receiveQuestion(question)),
+      question => {
+        dispatch(receiveQuestion(question));
+        return question;
+      },
       err => dispatch(receiveQuestionErrors(err.responseJSON))
     )
 );
@@ -46,7 +49,10 @@ export const createQuestion = question => dispatch => (
 export const updateQuestion = question => dispatch => (
   QuestionAPIUtil.updateQuestion(question)
     .then(
-      question => dispatch(receiveQuestion(question)),
+      question => {
+        dispatch(receiveQuestion(question));
+        return question;
+      },
       err => dispatch(receiveQuestionErrors(err.responseJSON))
     )
 );

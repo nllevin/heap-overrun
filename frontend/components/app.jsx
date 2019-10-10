@@ -5,6 +5,7 @@ import HeaderNav from "./header_nav";
 import MainContent from "./main_content";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
+import QuestionFormContainer from "./question/question_form_container";
 
 const App = () => (
   <div>
@@ -12,6 +13,7 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
+      <Route path ="/questions/new" component={QuestionFormContainer} />
       <Route component={MainContent} />
     </Switch>
   </div>

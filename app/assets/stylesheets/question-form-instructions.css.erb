@@ -1,0 +1,121 @@
+.question-form-instructions {
+  width: 316px;
+  margin-left: 24px;
+  border: 1px solid #d6d9dc;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(59, 64, 69, 0.1);
+  font-size: 13px;
+  background-color: white;
+  height: fit-content;
+}
+
+.question-form-instructions h2 {
+  padding: 12px 15px;
+  background: #fafafb;
+  color: #6a737c;
+  font-size: 15px;
+  border-bottom: 1px solid #e4e6e8;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.question-form-instructions > p {
+  padding: 0 16px;
+  margin: 0 0 13px 0;
+  font-size: 13px;
+  line-height: 16.5px;
+}
+
+.question-form-instructions > p:first-of-type {
+  padding-top: 16px;
+}
+
+div.instructions-step {
+  border-bottom: 1px solid #e4e6e8;  
+}
+
+.instructions-step li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.instructions-step li div {
+  display: flex;
+  align-items: flex-end;
+}
+
+.instructions-step h4 {
+  margin-left: 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+[class^="list-"] {
+  background-size: cover;
+  width: 16px;
+  height: 16px;
+}
+
+.list-1 {
+  background-image: url("<%= image_url('list-1.svg') %>");
+}
+
+.list-2 {
+  background-image: url("<%= image_url('list-2.svg') %>");
+}
+
+.list-3 {
+  background-image: url("<%= image_url('list-3.svg') %>");
+}
+
+[class^="chevron-"] {
+  background-size: cover;
+  height: 18px;
+  width: 18px;
+  background-position: -2px 2px;
+  filter: brightness(0);
+}
+
+.chevron-down {
+  background-image: url("<%= image_url('chevron-down.png') %>");
+}
+
+.chevron-up {
+  background-image: url("<%= image_url('chevron-up.png') %>");
+}
+
+.instruction-detail {
+  max-height: 300px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.instruction-detail ul {
+  list-style: disc inside;
+  padding: 0 0 12px 4px;
+}
+
+.instruction-detail li {
+  display: list-item;
+  padding: 0;
+  margin: 0 0 13px 40px;
+}
+
+.instruction-detail li:last-of-type {
+  margin-bottom: 0px;
+}
+
+.instruction-detail > p {
+  padding: 0;
+  margin: 0 16px 12px 44px;
+  font-size: 13px;
+}
+
+.instruction-detail.closed {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}

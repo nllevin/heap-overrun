@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import QuestionIndexItem from "./question_index_item";
 
 class QuestionIndex extends React.Component {
@@ -21,7 +22,7 @@ class QuestionIndex extends React.Component {
       <div className="question-index">
         <header>
           <h1>Top Questions</h1>
-          <a className="button">Ask Question</a>
+          <Link to="/questions/new" className="button">Ask Question</Link>
         </header>
         <ul>
           {questionItems}
