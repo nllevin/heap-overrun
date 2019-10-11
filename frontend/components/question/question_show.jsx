@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SideBar from "../side_bar";
 import SideNav from "../side_nav";
 import AnswerIndexContainer from "../answer/answer_index_container";
+import AnswerFormContainer from "../answer/answer_form_container";
 
 class QuestionShow extends React.Component {
   componentDidMount() {
@@ -50,6 +51,7 @@ class QuestionShow extends React.Component {
                 </div>
               </footer>
               <AnswerIndexContainer questionId={question.id} />
+              <AnswerFormContainer questionId={question.id} />
             </section>
             <SideBar />
           </main>

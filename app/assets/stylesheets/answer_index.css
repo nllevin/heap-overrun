@@ -20,3 +20,38 @@ section.answer-item-container {
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
+.answer-form textarea {
+  padding: 10px;
+  height: 200px;
+  line-height: 1.3;
+  width: 100%;
+  font-size: 14px;
+  tab-size: 4;
+  border: 1px solid #bbc0c4;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.answer-form h2 {
+  padding: 20px 0 18px;
+}
+
+.answer-form button.button {
+  margin: 15px 0;
+}
+
+h2.answer-access-message {
+  display: flex;
+  white-space: pre;
+  font-size: 21px;
+}
+
+.answer-access-message a {
+  color: #07C;
+  cursor: pointer;
+}
+
+.answer-access-message a:hover {
+  color: #3af;
+}
