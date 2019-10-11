@@ -2,7 +2,7 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
+#  id              :bigint           not null, primary key
 #  username        :string           not null
 #  email           :string           not null
 #  password_digest :string           not null
@@ -20,6 +20,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_many :questions, foreign_key: :author_id
+  has_many :answers, foreign_key: :author_id
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
