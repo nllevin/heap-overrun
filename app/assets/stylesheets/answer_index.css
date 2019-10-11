@@ -1,0 +1,22 @@
+.answers-index header {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-bottom: 24px;
+  width: 100%;
+  border-bottom: 1px solid #e4e6e8;
+}
+
+.answers-index h2 {
+  font-size: 18px;
+}
+
+section.answer-item-container {
+  padding: 20px 0;
+  border-bottom: 1px solid #e4e6e8;
+}
+
+.answer-item-container .post-signature {
+  background-color: transparent;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

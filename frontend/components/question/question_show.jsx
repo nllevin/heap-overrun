@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SideBar from "../side_bar";
 import SideNav from "../side_nav";
+import AnswerIndexContainer from "../answer/answer_index_container";
 
 class QuestionShow extends React.Component {
   componentDidMount() {
@@ -18,18 +19,18 @@ class QuestionShow extends React.Component {
     return (
       <div className="main-content">
         <SideNav />
-        <div className="question-show">
+        <div className="post-show">
           <header>
             <h1>{question.title}</h1>
             <Link to="/questions/new" className="button">Ask Question</Link>
           </header>
-          <div className="question-show-info">
+          <div className="post-show-info">
             <span>Asked<strong>today</strong></span>
             <span>Viewed<strong>8 times</strong></span>
           </div>
           <main className="main-content-container">
-            <section className="question-container">
-              <div className="question-show-main">
+            <section className="post-container">
+              <div className="post-show-main">
                 <aside className="vote-box">
                   <i className="up-arrow"></i>
                   <span>0</span>
@@ -40,7 +41,7 @@ class QuestionShow extends React.Component {
                 </p>
               </div>
               <footer>
-                <div className="question-signature">
+                <div className="post-signature">
                   <p>asked 1 min ago</p>
                   <div>
                     <i className="avatar">K</i>
@@ -48,6 +49,7 @@ class QuestionShow extends React.Component {
                   </div>
                 </div>
               </footer>
+              <AnswerIndexContainer questionId={question.id} />
             </section>
             <SideBar />
           </main>

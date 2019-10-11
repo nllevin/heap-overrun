@@ -1,48 +1,48 @@
-div.question-show {
+div.post-show {
   padding: 24px;
   flex: 1 1;
 }
 
-.question-show header {
+.post-show > header {
   padding-bottom: 6px;
   border-bottom: none;
 }
 
-.question-container {
+.post-container {
   flex: 1 1;
-  border-bottom: 1px solid #d6d9dc;
   height: fit-content;
 }
 
-.question-show-main {
+.post-show-main {
   display: flex;
 }
 
-.question-show main {
+.post-show main {
   padding-right: 0;
   padding-top: 16px;
   height: 100%;
 }
 
-.question-show p {
+.post-show p {
   font-size: 15px;
   flex: 1 1;
   padding-left: 15px;
+  line-height: 19.5px;
 }
 
-.question-show-info {
+.post-show-info {
   display: flex;
   width: 100%;
   border-bottom: 1px solid #d6d9dc;
 }
 
-.question-show-info span {
+.post-show-info span {
   display: flex;
   font-size: 13px;
   color: #6A737C;
 }
 
-.question-show-info strong {
+.post-show-info strong {
   color: #242729;
   margin: 0px 16px 16px 5px;
 }
@@ -78,12 +78,12 @@ div.question-show {
   color: #6a737c;
 }
 
-.question-show footer {
+.post-show footer {
   display: flex;
   justify-content: flex-end;
 }
 
-div.question-signature {
+div.post-signature {
   padding: 5px 6px 7px 7px;
   margin: 4px 0;
   width: 200px;
@@ -93,17 +93,17 @@ div.question-signature {
   margin: 20px 0 12px 0;
 }
 
-.question-signature p {
+.post-signature p {
   padding: 0;
   margin: 1px 0 4px;
   font-size: 12px;
 }
 
-.question-signature > div {
+.post-signature > div {
   display: flex;
 }
 
-.question-signature .avatar {
+.post-signature .avatar {
   width: 32px;
   height: 32px;
   margin: 0 8px 0 0;
@@ -111,7 +111,7 @@ div.question-signature {
   font-size: 16px;
 }
 
-.question-signature div p {
+.post-signature div p {
   font-size: 13px;
   color: #07C;
 }
