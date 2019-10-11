@@ -16,9 +16,10 @@ class CommunitiesDropdown extends React.Component {
   }
 
   handleClick(e) {
-    if (!this.node.contains(e.target)) {
-      this.props.toggleDropdown();
+    if (this.node.contains(e.target) || e.target.className === "stack-exchange") {
+      return;
     }
+    this.props.toggleDropdown();
   }
 
   render() {
