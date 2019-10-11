@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class CommunitiesDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.handleLink = this.handleLink.bind(this);
   }
 
   componentDidMount() {
@@ -13,6 +14,7 @@ class CommunitiesDropdown extends React.Component {
 
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClick);
+    this.props.closeDropdown();
   }
 
   handleClick(e) {
@@ -22,6 +24,11 @@ class CommunitiesDropdown extends React.Component {
     this.props.toggleDropdown();
   }
 
+  handleLink(link) {
+    this.props.closeDropdown();
+    this.props.history.push(link);
+  }
+
   render() {
     const { logout } = this.props;
     return (
@@ -29,20 +36,20 @@ class CommunitiesDropdown extends React.Component {
         <h3>CURRENT COMMUNITY</h3>
         <ul className="community">
           <li>
-            <Link to="/"><i className="so-icon"></i>Heap Overrun</Link>
+            <a onClick={() => this.handleLink("/")}><i className="so-icon"></i>Heap Overrun</a>
             <ul className="community-links">
               <li><a onClick={logout}>log out</a></li>
             </ul>        
           </li>
           <li>
             <i className="l-icon"></i>
-            <Link to="/"><i className="so-icon grayscale"></i> Meta Heap Overrun</Link>
+            <a onClick={() => this.handleLink("/")}><i className="so-icon grayscale"></i> Meta Heap Overrun</a>
           </li>
         </ul>
         <h3>YOUR COMMUNITIES</h3>
         <ul className="community your-community">
           <li>
-            <Link to="/"><i className="so-icon"></i>Heap Overrun</Link>
+            <a onClick={() => this.handleLink("/")}><i className="so-icon"></i>Heap Overrun</a>
           </li>
         </ul>
       </div>
@@ -50,4 +57,4 @@ class CommunitiesDropdown extends React.Component {
   }
 }
 
-export default CommunitiesDropdown;
+export default withRouter(CommunitiesDropdown);
