@@ -14,7 +14,7 @@ const QuestionIndexItem = ({ question }) => (
           <span>answers</span>
         </li>
         <li>
-          <span>0</span>
+          <span>{question.views}</span>
           <span>views</span>
         </li>
       </ul>

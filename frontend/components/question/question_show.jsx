@@ -27,7 +27,7 @@ class QuestionShow extends React.Component {
           </header>
           <div className="post-show-info">
             <span>Asked<strong>today</strong></span>
-            <span>Viewed<strong>8 times</strong></span>
+            <span>Viewed<strong>{question.views} times</strong></span>
           </div>
           <main className="main-content-container">
             <section className="post-container">

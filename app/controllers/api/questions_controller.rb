@@ -20,13 +20,15 @@ class Api::QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    unless @question
+    if !@question
       render json: "Sorry, question not found", status: 404
     end
+    user_id = current_user ? current_user.id : nil
+    @question.views.create(user_id: user_id)
   end
 
   def index
-    @questions = Question.all.includes(:answers)
+    @questions = Question.all.includes(:answers, :views)
   end
 
   def destroy
