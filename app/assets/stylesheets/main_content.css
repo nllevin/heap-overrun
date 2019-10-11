@@ -24,4 +24,7 @@
 .main-content .button {
   padding: 10.4px;
   line-height: 15px;
+  min-width: 100.11px;
+  max-height: 37.78px;
+  box-sizing: border-box;
 }

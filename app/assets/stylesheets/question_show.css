@@ -10,7 +10,6 @@ div.question-show {
 
 .question-container {
   flex: 1 1;
-  padding-bottom: 30px;
   border-bottom: 1px solid #d6d9dc;
   height: fit-content;
 }
@@ -91,6 +90,7 @@ div.question-signature {
   color: #6a737c;
   border-radius: 3px;
   background-color: #E1ECF4;
+  margin: 20px 0 12px 0;
 }
 
 .question-signature p {
