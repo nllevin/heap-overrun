@@ -11,7 +11,7 @@ class Greeting extends React.Component {
     this.toggleDropdown = this.toggleDropdown.bind(this);
   }
 
-  toggleDropdown() {
+  toggleDropdown(e) {
     this.setState({
       communitiesDropdown: !this.state.communitiesDropdown
     });
@@ -25,13 +25,16 @@ class Greeting extends React.Component {
           <div className="nav-link">
             <i className="avatar"><span>{currentUser.username[0].toUpperCase()}</span></i>
           </div>
-          <div className="nav-link" onClick={this.toggleDropdown}>
-            <i className="stack-exchange"></i>
-            <CommunitiesDropdown 
-              className={this.state.communitiesDropdown ? "" : "hidden"} 
-              ref={this.communitiesDropdown}
-              logout={logout} 
-            />
+          <div className="nav-link">
+            <i className="stack-exchange" onClick={this.toggleDropdown}></i>
+            {
+              this.state.communitiesDropdown ? 
+                <CommunitiesDropdown 
+                  logout={logout} 
+                  toggleDropdown={this.toggleDropdown}
+                />
+                : ""
+            }
           </div>
         </div>
       )
