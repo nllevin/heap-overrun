@@ -26,7 +26,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.all
+    @questions = Question.all.includes(:answers)
   end
 
   def destroy

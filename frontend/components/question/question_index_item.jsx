@@ -10,7 +10,7 @@ const QuestionIndexItem = ({ question }) => (
           <span>votes</span>
         </li>
         <li>
-          <span>0</span>
+          <span>{question.answerIds.length}</span>
           <span>answers</span>
         </li>
         <li>
