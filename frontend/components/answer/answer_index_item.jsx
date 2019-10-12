@@ -14,7 +14,7 @@ const AnswerIndexItem = ({ answer }) => (
     </div>
     <footer>
       <div className="post-signature">
-        <p>answered 1 min ago</p>
+        <p>answered {answer.answeredAtTime}</p>
         <div>
           <i className="avatar">K</i>
           <p>Kitty</p>

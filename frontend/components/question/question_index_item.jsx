@@ -30,7 +30,7 @@ const QuestionIndexItem = ({ question }) => (
           <li><a>Tag #3</a></li>
         </ul>
         <span className="question-origin">
-          <a>asked 31 secs ago</a>
+          <a>asked {question.askedAtTime}</a>
           <a>author</a>
           <span>15</span>
         </span>

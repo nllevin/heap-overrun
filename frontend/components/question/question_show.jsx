@@ -26,7 +26,7 @@ class QuestionShow extends React.Component {
             <Link to="/questions/new" className="button">Ask Question</Link>
           </header>
           <div className="post-show-info">
-            <span>Asked<strong>today</strong></span>
+            <span>Asked<strong>{question.askedAtTime}</strong></span>
             <span>Viewed<strong>{question.views} times</strong></span>
           </div>
           <main className="main-content-container">
@@ -43,7 +43,7 @@ class QuestionShow extends React.Component {
               </div>
               <footer>
                 <div className="post-signature">
-                  <p>asked 1 min ago</p>
+                  <p>asked {question.askedAtTime}</p>
                   <div>
                     <i className="avatar">K</i>
                     <p>Kitty</p>
