@@ -6,7 +6,15 @@ import SideBar from "../side_bar";
 
 class QuestionIndex extends React.Component {
   componentDidMount() {
-    this.props.fetchQuestions();
+    const searchParams = new URLSearchParams(this.props.location.search);
+    this.props.fetchQuestions(searchParams.get("q"));
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location.search !== prevProps.location.search) {
+      const searchParams = new URLSearchParams(this.props.location.search);
+      this.props.fetchQuestions(searchParams.get("q"));
+    }
   }
 
   render() {

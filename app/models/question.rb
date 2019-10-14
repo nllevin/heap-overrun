@@ -20,7 +20,7 @@ class Question < ApplicationRecord
   has_many :views
 
   def self.search(query = "") 
-    sanitized_query = sanitize_sql_array(["to_tsquery('english', ?)", query.gsub(/\s/,"+")])
+    sanitized_query = sanitize_sql_array(["to_tsquery('english', ?)", query.gsub(/\s/, "+")])
     Question.where("search_vector @@ #{sanitized_query}")
   end
 end

@@ -7,7 +7,15 @@ const SideNav = () => (
       <NavLink exact to="/">Home</NavLink>
       <h3>PUBLIC</h3>
       <ul className="nav-links">
-        <NavLink to="/questions" className="with-icon">
+        <NavLink 
+          className="with-icon" 
+          to="/questions"
+          isActive={(match, location) => {
+            if (match || location.pathname.startsWith("/search")) {
+              return true;
+            }
+          }}
+        >
           <i className="globe"></i>
           Heap Overrun
         </NavLink>
