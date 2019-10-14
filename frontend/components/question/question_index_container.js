@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchQuestions: (query) => dispatch(fetchQuestions(query))
+  fetchQuestions: (search, query) => dispatch(fetchQuestions(search, query))
 });
 
 export default connect(

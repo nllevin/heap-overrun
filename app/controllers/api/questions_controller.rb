@@ -28,7 +28,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def index
-    if params[:query] && params[:query].length > 0
+    if params[:search] == "true"
       @questions = Question.search(params[:query]).includes(:answers, :views)
     else
       @questions = Question.all.includes(:answers, :views)

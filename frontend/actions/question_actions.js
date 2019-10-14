@@ -25,8 +25,8 @@ const receiveQuestionErrors = errors => ({
   errors
 });
 
-export const fetchQuestions = (query) => dispatch => (
-  QuestionAPIUtil.fetchQuestions(query)
+export const fetchQuestions = (search, query) => dispatch => (
+  QuestionAPIUtil.fetchQuestions(search, query)
     .then(questions => dispatch(receiveQuestions(questions)))
 );
 

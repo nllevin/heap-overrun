@@ -39,6 +39,7 @@ class SearchBar extends React.Component {
               onChange={this.update} 
             />
           </label>
+          <button className="button">Search</button>
         </form>
       </div>
     );
