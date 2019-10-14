@@ -16,4 +16,16 @@ class Answer < ApplicationRecord
   belongs_to :author, class_name: :User
   belongs_to :question
   has_many :votes, as: :votable
+
+  def vote_total
+    votes = self.votes
+    votes.inject(0) do |total, vote|
+      total + (vote.up ? 1 : -1)
+    end
+  end
+
+  def current_user_vote(voter_id)
+    user_vote = self.votes.find_by(voter_id: voter_id)
+    return user_vote && (user_vote.up ? "up" : "down")
+  end
 end

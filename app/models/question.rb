@@ -24,4 +24,16 @@ class Question < ApplicationRecord
     sanitized_query = sanitize_sql_array(["to_tsquery('english', ?)", query.gsub(/\s/, "+")])
     Question.where("search_vector @@ #{sanitized_query}")
   end
+
+  def vote_total
+    votes = self.votes
+    votes.inject(0) do |total, vote|
+      total + (vote.up ? 1 : -1)
+    end
+  end
+
+  def current_user_vote(voter_id)
+    user_vote = self.votes.find_by(voter_id: voter_id)
+    return user_vote && (user_vote.up ? "up" : "down")
+  end
 end
