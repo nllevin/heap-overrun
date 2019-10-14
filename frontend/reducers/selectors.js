@@ -2,10 +2,11 @@ export const getQuestion = (state, questionId) => (
   state.entities.questions[questionId]
 );
 
-export const getFilteredQuestions = (state) => (
-  Object.values(state.entities.questions)
-    .filter(question => state.session.filteredQuestionIds.includes(String(question.id)))
-);
+export const getFilteredQuestions = (state) => {
+  const filteredQuestionIds = state.sessionfilteredQuestionIds || Object.keys(state.entities.questions);
+  return Object.values(state.entities.questions)
+    .filter(question => filteredQuestionIds.includes(String(question.id)))
+};
 
 export const getAnswers = (state, questionId) => (
   Object.values(state.entities.answers)
