@@ -3,7 +3,7 @@ export const getQuestion = (state, questionId) => (
 );
 
 export const getFilteredQuestions = (state) => {
-  const filteredQuestionIds = state.sessionfilteredQuestionIds || Object.keys(state.entities.questions);
+  const filteredQuestionIds = state.session.filteredQuestionIds || Object.keys(state.entities.questions);
   return Object.values(state.entities.questions)
     .filter(question => filteredQuestionIds.includes(String(question.id)))
 };
