@@ -6,6 +6,7 @@ div.post-show {
 .post-show > header {
   padding-bottom: 6px;
   border-bottom: none;
+  display: flex;
 }
 
 .post-container {
