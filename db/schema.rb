@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_14_152003) do
+ActiveRecord::Schema.define(version: 2019_10_14_223900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(version: 2019_10_14_152003) do
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_views_on_question_id"
     t.index ["user_id"], name: "index_views_on_user_id"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "voter_id", null: false
+    t.integer "votable_id", null: false
+    t.string "votable_type", null: false
+    t.boolean "up", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["votable_id", "voter_id", "votable_type"], name: "index_votes_on_votable_id_and_voter_id_and_votable_type", unique: true
   end
 
 end

@@ -18,6 +18,7 @@ class Question < ApplicationRecord
   belongs_to :author, class_name: :User
   has_many :answers
   has_many :views
+  has_many :votes, as: :votable
 
   def self.search(query = "") 
     sanitized_query = sanitize_sql_array(["to_tsquery('english', ?)", query.gsub(/\s/, "+")])
