@@ -33,6 +33,10 @@ input {
   font-size: 13px;
 }
 
+input::placeholder {
+  color: #bbc0c4;
+}
+
 textarea:focus, input:focus {
   border-color: #66bfff;
   box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
