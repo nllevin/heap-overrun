@@ -33,6 +33,10 @@ class SideBar extends React.Component {
               ))
           }
         </ul>
+        <a href="https://stackexchange.com/feeds/questions">
+          <i className="rss-icon"></i>
+          Question feed
+        </a>
       </div>
     )
   }
