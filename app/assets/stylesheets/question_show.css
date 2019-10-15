@@ -7,6 +7,7 @@ div.post-show {
   padding-bottom: 6px;
   border-bottom: none;
   display: flex;
+  justify-content: space-between;
 }
 
 .post-container {
