@@ -8,9 +8,9 @@ class SideBar extends React.Component {
 
   componentDidMount() {
     const url = "https://stackexchange.com/feeds/questions";
-    feednami.setPublicApiKey('f901719449c894e1f7e445c4f0fb917bbafc8c6f2f7c7df98ecb0abb79476420')
+    // feednami.setPublicApiKey('f901719449c894e1f7e445c4f0fb917bbafc8c6f2f7c7df98ecb0abb79476420')
     feednami.load(url)
-      .then(feed => this.setState({ entries: feed.entries }));
+      .then(feed => this.setState({ entries: feed.entries }))
   }
 
   render() {
@@ -20,14 +20,17 @@ class SideBar extends React.Component {
 
     return (
       <div className="side-bar">
-        Hot Network Questions
+        <h3>Hot Network Questions</h3>
         <ul>
           {
-            this.state.entries.map((entry, idx) => (
-              <li key={idx}>
-                <a href={entry.link}>{entry.title.split(" – ")[0]}</a>
-              </li>
-            ))
+            this.state.entries
+              .filter(entry => !entry.link.includes("meta"))
+              .map((entry, idx) => (
+                <li key={idx}>
+                  <i className="se-icon"></i>
+                  <a href={entry.link}>{entry.title.split(" – ")[0]}</a>
+                </li>
+              ))
           }
         </ul>
       </div>
