@@ -19,6 +19,7 @@ class Question < ApplicationRecord
   has_many :answers
   has_many :views
   has_many :votes, as: :votable
+  has_many :comments, as: :commentable
 
   def self.search(query = "") 
     sanitized_query = sanitize_sql_array(["to_tsquery('english', ?)", query.gsub(/\s/, "+")])

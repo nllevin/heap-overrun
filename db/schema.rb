@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_14_223900) do
+ActiveRecord::Schema.define(version: 2019_10_15_210848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 2019_10_14_223900) do
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_answers_on_author_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "author_id", null: false
+    t.integer "commentable_id", null: false
+    t.string "commentable_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_comments_on_author_id"
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -64,7 +75,7 @@ ActiveRecord::Schema.define(version: 2019_10_14_223900) do
     t.boolean "up", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["votable_id", "voter_id", "votable_type"], name: "index_votes_on_votable_id_and_voter_id_and_votable_type", unique: true
+    t.index ["votable_type", "votable_id", "voter_id"], name: "index_votes_on_votable_type_and_votable_id_and_voter_id", unique: true
   end
 
 end
