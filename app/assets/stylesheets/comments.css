@@ -1,0 +1,21 @@
+.answer-item-container .comments-index {
+  margin-top: 30px;
+}
+
+.comments-index {
+  margin-left: 51px;
+}
+
+.comments-index li {
+  padding: 6px;
+  border-bottom: 1px solid #eff0f1;
+}
+
+.comments-index li:first-of-type {
+  border-top: 1px solid #eff0f1;
+}
+
+.comment-index-item > p.comment-index-item-body {
+  font-size: 13px;
+  font-weight: 400;
+}

@@ -1,14 +1,7 @@
-export const fetchAnswerComments = answerId => (
+export const fetchComments = (commentableType, commentableId) => (
   $.ajax({
     method: "GET",
-    url: `api/answers/${answerId}/comments`
-  })
-);
-
-export const fetchQuestionComments = questionId => (
-  $.ajax({
-    method: "GET",
-    url: `api/questions/${questionId}/comments`
+    url: `api/${commentableType}/${commentableId}/comments`
   })
 );
 

@@ -1,5 +1,6 @@
 import React from "react";
 import VoteWidgetContainer from "../vote_widget_container";
+import CommentIndexContainer from "../comments/comment_index_container";
 
 const AnswerIndexItem = ({ answer }) => (
   <section className="post-container answer-item-container">
@@ -18,6 +19,10 @@ const AnswerIndexItem = ({ answer }) => (
         </div>
       </div>
     </footer>
+    <CommentIndexContainer
+      commentableType="answers"
+      commentableId={answer.id}
+    />
   </section>
 );
 

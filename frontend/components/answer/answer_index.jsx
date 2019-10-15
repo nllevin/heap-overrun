@@ -6,7 +6,7 @@ class AnswerIndex extends React.Component {
     this.props.fetchAnswers(this.props.questionId);
   }
   render() {
-    const { answers, questionId } = this.props;
+    const { answers } = this.props;
 
     if (!answers || answers.length === 0) { return null; }
 

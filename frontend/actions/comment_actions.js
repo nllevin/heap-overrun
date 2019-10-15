@@ -25,13 +25,8 @@ const receiveCommentErrors = errors => ({
   errors
 });
 
-export const fetchAnswerComments = (answerId) => dispatch => (
-  CommentAPIUtil.fetchAnswerComments(answerId)
-    .then(comments => dispatch(receiveComments(comments)))
-);
-
-export const fetchQuestionComments = (questionId) => dispatch => (
-  CommentAPIUtil.fetchQuestionComments(questionId)
+export const fetchComments = (commentableType, commentableId) => dispatch => (
+  CommentAPIUtil.fetchComments(commentableType, commentableId)
     .then(comments => dispatch(receiveComments(comments)))
 );
 

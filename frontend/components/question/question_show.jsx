@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SideBar from "../side_bar";
 import SideNav from "../side_nav";
 import VoteWidgetContainer from "../vote_widget_container";
+import CommentIndexContainer from "../comments/comment_index_container";
 import AnswerIndexContainer from "../answer/answer_index_container";
 import AnswerFormContainer from "../answer/answer_form_container";
 
@@ -47,6 +48,10 @@ class QuestionShow extends React.Component {
                   </div>
                 </div>
               </footer>
+              <CommentIndexContainer
+                commentableType="questions"
+                commentableId={question.id}
+              />
               <AnswerIndexContainer questionId={question.id} />
               <AnswerFormContainer questionId={question.id} />
             </section>

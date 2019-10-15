@@ -12,6 +12,11 @@ export const getAnswers = (state, questionId) => (
     .filter(answer => answer.question_id === questionId)
 );
 
+export const getComments = (state, commentableId) => (
+  Object.values(state.entities.comments)
+    .filter(comment => comment.commentable_id === commentableId)
+);
+
 export const getQuestionAuthor = (state, questionId) => (
   state.entities.users[getQuestion(state, questionId).author_id]
 );
