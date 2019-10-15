@@ -8,6 +8,18 @@
     <script type="text/javascript">
       window.soIconURL = "<%= image_url('so-icon.png') %>";
     </script>
+    
+    <% if logged_in?%>
+      <script type="text/javascript">
+        window.currentUser = <%= render(
+          "api/users/user.json.jbuilder", 
+          user: current_user 
+        ).html_safe %>
+      </script>
+    <% end %>
+
+    <script src="https://static.sekandocdn.net/static/feednami/feednami-client-v1.1.js"></script>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>

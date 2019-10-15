@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root";
+import configureStore from "./store/store";
 
 // For testing only:
-import configureStore from "./store/store";
-import * as AnswerActions from "./actions/answer_actions";
 ///////////////////
 
 document.addEventListener("DOMContentLoaded", () =>{
@@ -29,6 +28,5 @@ document.addEventListener("DOMContentLoaded", () =>{
   // For testing only:
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.AnswerActions = AnswerActions;
   ////////////////////
 });
