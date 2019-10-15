@@ -3,9 +3,8 @@ export const getQuestion = (state, questionId) => (
 );
 
 export const getFilteredQuestions = (state) => {
-  const filteredQuestionIds = state.session.filteredQuestionIds || Object.keys(state.entities.questions);
   return Object.values(state.entities.questions)
-    .filter(question => filteredQuestionIds.includes(String(question.id)))
+    .filter(question => state.session.filteredQuestionIds.includes(String(question.id)))
 };
 
 export const getAnswers = (state, questionId) => (
