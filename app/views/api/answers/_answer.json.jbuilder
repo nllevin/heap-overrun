@@ -1,4 +1,5 @@
 json.extract! answer, :id, :body, :question_id, :author_id
+json.set! :commentIds, answer.comment_ids
 json.set! :votes, answer.vote_total
 if current_user
   current_user_vote = answer.current_user_vote(current_user.id)

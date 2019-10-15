@@ -1,5 +1,6 @@
 json.extract! question, :id, :title, :body, :author_id
 json.set! :answerIds, question.answer_ids
+json.set! :commentIds, question.comment_ids
 json.set! :views, question.views.length
 json.set! :votes, question.vote_total
 if current_user
