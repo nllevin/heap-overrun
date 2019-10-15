@@ -5,7 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: fit-content;
+  min-height: 100%;
   width: 100%;
   background-color: #eff0f1;
 }
