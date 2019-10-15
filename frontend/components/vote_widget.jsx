@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 class VoteWidget extends React.Component {
   constructor(props) {
@@ -27,7 +28,9 @@ class VoteWidget extends React.Component {
         })
       } else if (currentUserId) {
         this.createVote(voteDirection);
-      } 
+      } else {
+        this.props.history.push("/login");
+      }
     };
   }
 
@@ -55,4 +58,4 @@ class VoteWidget extends React.Component {
   }
 }
 
-export default VoteWidget;
+export default withRouter(VoteWidget);
