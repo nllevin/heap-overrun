@@ -21,11 +21,12 @@ class VoteWidget extends React.Component {
     const { currentUserVoteId, currentUserId, deleteVote, currentUserVote, postClass } = this.props;
     return () => {
       if (currentUserVoteId) {
-        deleteVote(currentUserVoteId, postClass).then(() => {
-          if (currentUserVote !== voteDirection) {
-            this.createVote(voteDirection);
-          }
-        })
+        deleteVote(currentUserVoteId, postClass)
+          .then(() => {
+            if (currentUserVote !== voteDirection) {
+              this.createVote(voteDirection);
+            }
+          })
       } else if (currentUserId) {
         this.createVote(voteDirection);
       } else {
