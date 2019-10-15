@@ -34,6 +34,9 @@ class Question < ApplicationRecord
 
   def current_user_vote(voter_id)
     user_vote = self.votes.find_by(voter_id: voter_id)
-    return user_vote && (user_vote.up ? "up" : "down")
+    return {
+      up: user_vote && (user_vote.up ? "up" : "down"),
+      id: user_vote && user_vote.id
+    }
   end
 end

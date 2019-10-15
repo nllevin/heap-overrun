@@ -1,13 +1,10 @@
 import React from "react";
+import VoteWidgetContainer from "../vote_widget_container";
 
 const AnswerIndexItem = ({ answer }) => (
   <section className="post-container answer-item-container">
     <div className="post-show-main">
-      <aside className="vote-box">
-        <i className="up-arrow"></i>
-        <span>0</span>
-        <i className="down-arrow"></i>
-      </aside>
+      <VoteWidgetContainer post={answer} postClass="answers" />
       <p>
         {answer.body}
       </p>

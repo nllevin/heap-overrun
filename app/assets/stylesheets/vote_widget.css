@@ -1,0 +1,39 @@
+.vote-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.up-arrow {
+  display: inline-block;
+  border-bottom: 16px solid #bbc0c4;
+  border-left: 16px solid white;
+  border-right: 16px solid white;
+}
+
+.up-arrow.voted {
+  border-bottom-color: #F48024;
+}
+
+.down-arrow {
+  display: inline-block;
+  border-top: 16px solid #bbc0c4;
+  border-left: 16px solid white;
+  border-right: 16px solid white;
+}
+
+.down-arrow.voted {
+  border-top-color: #F48024;
+}
+
+[class*="-arrow"] {
+  margin: 10px 2px;
+  cursor: pointer;
+}
+
+.vote-box span {
+  margin: 2px;
+  padding: 5px 0;
+  font-size: 21px;
+  color: #6a737c;
+}

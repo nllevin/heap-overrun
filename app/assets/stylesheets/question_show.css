@@ -48,37 +48,6 @@ div.post-show {
   margin: 0px 16px 16px 5px;
 }
 
-.vote-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.up-arrow {
-  display: inline-block;
-  border-bottom: 16px solid #bbc0c4;
-  border-left: 16px solid white;
-  border-right: 16px solid white;
-}
-
-.down-arrow {
-  display: inline-block;
-  border-top: 16px solid #bbc0c4;
-  border-left: 16px solid white;
-  border-right: 16px solid white;
-}
-
-[class*="-arrow"] {
-  margin: 10px 2px;
-}
-
-.vote-box span {
-  margin: 2px;
-  padding: 5px 0;
-  font-size: 21px;
-  color: #6a737c;
-}
-
 .post-show footer {
   display: flex;
   justify-content: flex-end;

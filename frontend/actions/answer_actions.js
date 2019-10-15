@@ -10,7 +10,7 @@ const receiveAnswers = answers => ({
   answers
 });
 
-const receiveAnswer = answer => ({
+export const receiveAnswer = answer => ({
   type: RECEIVE_ANSWER,
   answer
 });

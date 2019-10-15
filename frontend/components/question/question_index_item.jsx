@@ -6,7 +6,7 @@ const QuestionIndexItem = ({ question }) => (
     <Link to={`/questions/${question.id}`}>
       <ul className="question-data">
         <li>
-          <span>0</span>
+          <span>{question.votes}</span>
           <span>votes</span>
         </li>
         <li>

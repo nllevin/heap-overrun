@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SideBar from "../side_bar";
 import SideNav from "../side_nav";
+import VoteWidgetContainer from "../vote_widget_container";
 import AnswerIndexContainer from "../answer/answer_index_container";
 import AnswerFormContainer from "../answer/answer_form_container";
 
@@ -32,11 +33,7 @@ class QuestionShow extends React.Component {
           <main className="main-content-container">
             <section className="post-container">
               <div className="post-show-main">
-                <aside className="vote-box">
-                  <i className="up-arrow"></i>
-                  <span>0</span>
-                  <i className="down-arrow"></i>
-                </aside>
+                <VoteWidgetContainer post={question} postClass="questions" />
                 <p>
                   {question.body}
                 </p>
