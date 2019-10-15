@@ -14,6 +14,9 @@ const sessionReducer = (state = defaultState, action) => {
     case LOGOUT_CURRENT_USER:
       return Object.assign({}, state, { currentUserId: null });
     case RECEIVE_QUESTION:
+      return state.filteredQuestionIds.includes(action.question.id) ? 
+        {...state} 
+        : Object.assign({}, state, { filteredQuestionIds: state.filteredQuestionIds.concat(action.question.id) });
     case RECEIVE_QUESTIONS:
       return Object.assign({}, state, { filteredQuestionIds: Object.keys(action.questions) });
     default:

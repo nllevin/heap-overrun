@@ -15,7 +15,10 @@ document.addEventListener("DOMContentLoaded", () =>{
       entities: {
         users: { [currentUser.id]: currentUser }
       },
-      session: { currentUserId: currentUser.id }
+      session: { 
+        currentUserId: currentUser.id,
+        filteredQuestionIds: []
+      }
     };
     delete window.currentUser;
   }
