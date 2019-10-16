@@ -53,6 +53,7 @@
   display: block;
   max-height: 0px;
   border: none;
+  transition: max-height 0s;
 }
 
 .comment-form {
