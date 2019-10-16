@@ -1,5 +1,5 @@
+import { RECEIVE_QUESTION } from "../actions/question_actions";
 import { 
-  RECEIVE_ANSWERS, 
   RECEIVE_ANSWER, 
   REMOVE_ANSWER 
 } from "../actions/answer_actions";
@@ -7,7 +7,7 @@ import {
 const answersReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
-    case RECEIVE_ANSWERS:
+    case RECEIVE_QUESTION:
       return Object.assign({}, state, action.answers);
     case RECEIVE_ANSWER:
       return Object.assign({}, state, {[action.answer.id]: action.answer});

@@ -1,10 +1,3 @@
-export const fetchAnswers = questionId => (
-  $.ajax({
-    method: "GET",
-    url: `api/questions/${questionId}/answers`
-  })
-);
-
 export const createAnswer = answer => (
   $.ajax({
     method: "POST",

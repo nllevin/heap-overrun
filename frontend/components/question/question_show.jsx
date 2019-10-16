@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import SideBar from "../side_bar";
 import SideNav from "../side_nav";
 import VoteWidgetContainer from "../vote_widget_container";
-import CommentIndexContainer from "../comments/comment_index_container";
-import AnswerIndexContainer from "../answer/answer_index_container";
+import CommentIndex from "../comments/comment_index";
+import AnswerIndex from "../answer/answer_index";
 import AnswerFormContainer from "../answer/answer_form_container";
 
 class QuestionShow extends React.Component {
@@ -13,7 +13,7 @@ class QuestionShow extends React.Component {
   }
 
   render() {
-    const { question, author } = this.props;
+    const { question, answers, comments, author } = this.props;
 
     if (!question) {
       return null;
@@ -48,11 +48,12 @@ class QuestionShow extends React.Component {
                   </div>
                 </div>
               </footer>
-              <CommentIndexContainer
+              <CommentIndex
+                comments={comments}
                 commentableType="questions"
                 commentableId={question.id}
               />
-              <AnswerIndexContainer questionId={question.id} />
+              <AnswerIndex answers={answers} />
               <AnswerFormContainer questionId={question.id} />
             </section>
             <SideBar />

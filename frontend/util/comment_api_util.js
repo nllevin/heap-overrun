@@ -1,10 +1,3 @@
-export const fetchComments = (commentableType, commentableId) => (
-  $.ajax({
-    method: "GET",
-    url: `api/${commentableType}/${commentableId}/comments`
-  })
-);
-
 export const createComment = comment => (
   $.ajax({
     method: "POST",

@@ -10,9 +10,11 @@ const receiveQuestions = questions => ({
   questions
 });
 
-export const receiveQuestion = question => ({
+export const receiveQuestion = data => ({
   type: RECEIVE_QUESTION,
-  question
+  question: data.question,
+  answers: data.answers,
+  comments: data.comments
 });
 
 const removeQuestion = questionId => ({
@@ -38,9 +40,9 @@ export const fetchQuestion = id => dispatch => (
 export const createQuestion = question => dispatch => (
   QuestionAPIUtil.createQuestion(question)
     .then(
-      question => {
-        dispatch(receiveQuestion(question));
-        return question;
+      data => {
+        dispatch(receiveQuestion(data));
+        return data.question;
       },
       err => dispatch(receiveQuestionErrors(err.responseJSON))
     )

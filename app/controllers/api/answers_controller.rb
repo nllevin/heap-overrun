@@ -1,8 +1,4 @@
 class Api::AnswersController < ApplicationController
-  def index
-    @answers = Answer.where(question_id: params[:question_id]).includes(:votes, :comments)
-  end
-
   def create
     @answer = Answer.new(answer_params)
     @answer.author_id = current_user.id

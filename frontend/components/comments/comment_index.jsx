@@ -9,10 +9,6 @@ class CommentIndex extends React.Component {
     this.toggleForm = this.toggleForm.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchComments();
-  }
-
   toggleForm() {
     this.setState({formOpen: !this.state.formOpen})
   }

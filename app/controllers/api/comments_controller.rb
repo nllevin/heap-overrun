@@ -1,10 +1,4 @@
 class Api::CommentsController < ApplicationController
-  def index
-    @comments = params[:question_id] ?
-      Question.find(params[:question_id]).comments
-      : Answer.find(params[:answer_id]).comments
-  end
-
   def create
     @comment = Comment.new(comment_params)
     @comment.author_id = current_user.id

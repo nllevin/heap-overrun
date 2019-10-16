@@ -12,9 +12,12 @@ export const getAnswers = (state, questionId) => (
     .filter(answer => answer.question_id === questionId)
 );
 
-export const getComments = (state, commentableId) => (
+export const getComments = (state, commentableType, commentableId) => (
   Object.values(state.entities.comments)
-    .filter(comment => comment.commentable_id === commentableId)
+    .filter(comment => (
+      comment.commentable_type === commentableType
+      && comment.commentable_id === commentableId
+    ))
 );
 
 export const getQuestionAuthor = (state, questionId) => (
