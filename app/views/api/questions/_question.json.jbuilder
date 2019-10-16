@@ -4,7 +4,7 @@ json.set! :commentIds, question.comment_ids
 json.set! :views, question.views.length
 json.set! :votes, question.vote_total
 if current_user && (current_user_vote = question.current_user_vote(current_user.id))
-  json.set! :currentUserVote, current_user_vote.up
+  json.set! :currentUserVote, current_user_vote.up ? "up" : "down"
   json.set! :currentUserVoteId, current_user_vote.id
 else
   json.set! :currentUserVote, nil
