@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_210848) do
+ActiveRecord::Schema.define(version: 2019_10_16_175533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,23 @@ ActiveRecord::Schema.define(version: 2019_10_15_210848) do
     t.tsvector "search_vector"
     t.index ["search_vector"], name: "questions_search_idx", using: :gin
     t.index ["title"], name: "index_questions_on_title", unique: true
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer "tag_id", null: false
+    t.integer "question_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_taggings_on_question_id"
+    t.index ["tag_id", "question_id"], name: "index_taggings_on_tag_id_and_question_id", unique: true
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_tags_on_title", unique: true
   end
 
   create_table "users", force: :cascade do |t|
