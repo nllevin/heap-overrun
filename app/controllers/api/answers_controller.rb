@@ -1,6 +1,6 @@
 class Api::AnswersController < ApplicationController
   def index
-    @answers = Question.find(params[:question_id]).answers
+    @answers = Answer.where(question_id: params[:question_id]).includes(:votes, :comments)
   end
 
   def create

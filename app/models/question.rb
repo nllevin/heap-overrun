@@ -29,17 +29,12 @@ class Question < ApplicationRecord
   end
 
   def vote_total
-    votes = self.votes
-    votes.inject(0) do |total, vote|
+    self.votes.inject(0) do |total, vote|
       total + (vote.up ? 1 : -1)
     end
   end
 
   def current_user_vote(voter_id)
-    user_vote = self.votes.find_by(voter_id: voter_id)
-    return {
-      up: user_vote && (user_vote.up ? "up" : "down"),
-      id: user_vote && user_vote.id
-    }
+    self.votes.find { |vote| vote.voter_id == voter_id }
   end
 end
