@@ -2,6 +2,11 @@ class Api::QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.author_id = current_user.id
+    @question.tag_ids = params[:question][:tags].map do |tag_name|
+      tag = Tag.find_by(title: tag_name)
+      tag ? tag.id : Tag.create(title: tag_name.downcase).id
+    end
+
     if @question.save
       render :show
     else

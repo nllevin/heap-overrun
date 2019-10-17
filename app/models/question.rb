@@ -14,6 +14,7 @@
 class Question < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :body, presence: true
+  validate :limit_five_tags
 
   belongs_to :author, class_name: :User
   has_many :answers
@@ -36,5 +37,11 @@ class Question < ApplicationRecord
 
   def current_user_vote(voter_id)
     self.votes.find { |vote| vote.voter_id == voter_id }
+  end
+
+  def limit_five_tags
+    if tags.length > 5
+      errors.add(:please, "add no more than five tags.")
+    end
   end
 end
