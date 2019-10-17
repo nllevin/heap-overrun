@@ -25,9 +25,7 @@ const QuestionIndexItem = ({ question }) => (
       </h3>
       <div className="question-details">
         <ul className="question-tags">
-          <li><a>Tag #1</a></li>
-          <li><a>Tag #2</a></li>
-          <li><a>Tag #3</a></li>
+          {question.tagNames.map((tagName, idx) => <li key={idx}><a>{tagName}</a></li>) }
         </ul>
         <span className="question-origin">
           <a>asked {question.askedAtTime}</a>

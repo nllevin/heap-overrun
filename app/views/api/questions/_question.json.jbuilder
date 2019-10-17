@@ -1,7 +1,7 @@
 json.extract! question, :id, :title, :body, :author_id
 json.set! :answerIds, question.answer_ids
 json.set! :commentIds, question.comment_ids
-json.set! :tagIds, question.tag_ids
+json.set! :tagNames, question.tags.map { |tag| tag.title }
 json.set! :views, question.views.length
 json.set! :votes, question.vote_total
 if current_user && (current_user_vote = question.current_user_vote(current_user.id))
