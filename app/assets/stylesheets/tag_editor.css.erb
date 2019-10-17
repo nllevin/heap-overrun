@@ -1,0 +1,116 @@
+label div.tag-editor-container {
+  position: relative;
+}
+
+label div.tag-editor {
+  width: 100%;
+  padding: 2px;
+  min-height: 37px;
+  border-radius: 3px;
+  border: 1px solid #bbc0c4;
+  font-size: 13px;
+  line-height: 1.15;
+  display: flex;
+  align-items: center;
+  cursor: text;
+}
+
+div.tag-editor.active {
+  border-color: #66bfff;
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+.tag-editor input {
+  border: 0;
+  width: fit-content;
+  padding: 0 0 0 6px;
+}
+
+.tag-editor input:focus {
+  box-shadow: none;
+}
+
+ul.matching-tags {
+  position: absolute;
+  width: calc(100% - 4px);
+  left: 2px;
+  top: 32px;
+  background-color: white;
+  border: 1px solid #bbc0c4;
+  box-sizing: border-box;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.matching-tags li {
+  width: 33.33%;
+  padding: 5px;
+}
+
+.matching-tags li:hover {
+  background-color: #fffbec;
+}
+
+.matching-tags span,
+.tag-list span {
+  width: fit-content;
+  font-size: 12px;
+  color: #39739d;
+  background-color: #E1ECF4;
+  border: 1px solid #E1ECF4;
+  padding: 4.8px 6px;
+  margin: 2px 5px 2px 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.tag-list span {
+  margin: 2px;
+  padding: 0 4px;
+  line-height: 1.85;
+  display: flex;
+  align-items: center;
+  cursor: text;
+}
+
+.tag-list span:hover {
+  background-color: #cee0ed;
+  color: #254a65;
+}
+
+span.tag-list {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  height: 0;
+  display: flex;
+  align-items: center;
+}
+
+i.times-icon {
+  width: 14px;
+  height: 14px;
+  font-size: 16px;
+  top: -2px;
+  position: relative;
+  text-align: center;
+  color: inherit;
+}
+
+span.tag-list div.times-icon-container {
+  cursor: pointer;
+  margin-right: -1px;
+  margin-left: 4px;
+  padding: 1px;
+  border-radius: 3px;
+  position: relative;
+  top: 2px;
+  color: rgba(44, 87, 119, 0.9);
+}
+
+span.tag-list div.times-icon-container:hover {
+  background-color: rgba(44, 87, 119, 0.9);
+  color: white;
+}

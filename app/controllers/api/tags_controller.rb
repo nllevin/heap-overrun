@@ -8,6 +8,10 @@ class Api::TagsController < ApplicationController
     end
   end
 
+  def index
+    @tags = Tag.where("title ILIKE ?", "%#{params[:inputVal]}%").limit(6)
+  end
+
   private
 
   def tag_params

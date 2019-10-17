@@ -1,21 +1,27 @@
 import React from "react";
 import QuestionFormInstructions from "./question_form_instructions";
+import TagEditor from "./tag_editor";
 
 class QuestionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.question;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateTags = this.updateTags.bind(this);
   }
-
+  
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state)
-      .then(question => this.props.history.push(`/questions/${question.id}`));
+    .then(question => this.props.history.push(`/questions/${question.id}`));
   }
-
+  
   update(field) {
     return e => this.setState({ [field]: e.target.value });
+  }
+
+  updateTags(tags) {
+    this.setState({ tags });
   }
 
   render() {
@@ -57,6 +63,13 @@ class QuestionForm extends React.Component {
                     value={this.state.body}
                     onChange={this.update("body")}
                   ></textarea>
+                </label>
+                <label>
+                  <div>
+                    <h3>Tags</h3>
+                    <span>Add up to 5 tags to describe what your question is about</span>
+                  </div>
+                  <TagEditor updateTags={this.updateTags}/>
                 </label>
               </form>
               <button className="button" onClick={this.handleSubmit}>Post your question</button>

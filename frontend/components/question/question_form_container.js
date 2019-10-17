@@ -5,7 +5,8 @@ import QuestionForm from "./question_form";
 const mapStateToProps = state => ({
   question: {
     title: "",
-    body: ""
+    body: "",
+    tags: []
   },
   errors: state.errors.question
 });
