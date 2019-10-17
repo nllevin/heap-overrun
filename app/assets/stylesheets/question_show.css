@@ -15,6 +15,10 @@ div.post-show {
   height: fit-content;
 }
 
+.post-container .question-tags {
+  margin-left: 51px;
+}
+
 .post-show-main {
   display: flex;
 }

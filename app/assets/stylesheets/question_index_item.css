@@ -64,14 +64,15 @@
   padding: 4.8px 6px;
   margin: 2px 5px 2px 0;
   border-radius: 3px;
-  cursor: pointer;
+  cursor: default;
+  /* cursor: pointer; */
 }
 
-.question-tags li:hover {
+/* .question-tags li:hover {
   color: #33658a;
   background-color: #cee0ed;
   border: 1px solid #cee0ed;
-}
+} */
 
 .question-origin {
   padding-top: 4px;

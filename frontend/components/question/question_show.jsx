@@ -39,6 +39,9 @@ class QuestionShow extends React.Component {
                   {question.body}
                 </p>
               </div>
+              <ul className="question-tags">
+                {question.tagNames.map((tagName, idx) => <li key={idx}><a>{tagName}</a></li>)}
+              </ul>
               <footer>
                 <div className="post-signature">
                   <p>asked {question.askedAtTime}</p>
