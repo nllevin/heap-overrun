@@ -147,6 +147,8 @@ class TagEditor extends React.Component {
                         className="tag"
                       >
                         <span>{tag.title}</span>
+                        <p className="tag-num-taggings">x {tag.numTaggings}</p>
+                        <p className="tag-description">{tag.description}</p>
                       </li>
                     ))
                 }

@@ -1,3 +1,3 @@
 json.array! @tags do |tag|
-  json.extract! tag, :id, :title, :description
+  json.partial! "api/tags/tag", tag: tag
 end
