@@ -94,11 +94,11 @@ class TagEditor extends React.Component {
   }
 
   render() {
-    const { activeTagIdx, selectedTags, inputVal } = this.state;
+    const { isActive, activeTagIdx, selectedTags, inputVal, matchingTags } = this.state;
     return (
       <div className="tag-editor-container">
         <div 
-          className={this.state.isActive ? "tag-editor active" : "tag-editor"}
+          className={isActive ? "tag-editor active" : "tag-editor"}
           onFocus={this.toggleFocus}
           onBlur={this.toggleFocus}
           onClick={() => this.selectTag(inputVal)}
@@ -118,10 +118,10 @@ class TagEditor extends React.Component {
           <input 
             type="text"
             className="tag-input"
-            value={this.state.inputVal}
+            value={inputVal}
             placeholder={selectedTags.length === 0 ? "e.g. (c vb.net java)": ""}
             onChange={this.handleInput}
-            style={{width:`${6 * this.state.inputVal.length + 126}px`}}
+            style={{width:`${6 * inputVal.length + 126}px`}}
           />
           <span className="tag-list">
             {
@@ -132,21 +132,23 @@ class TagEditor extends React.Component {
           </span>
         </div>
         {
-          (!this.state.isActive || this.state.inputVal.length === 0) ? "" : (
+          (!isActive || inputVal.length === 0) ? "" : (
             <ul className="matching-tags"
               onPointerEnter={this.toggleFreeze}
               onPointerLeave={this.toggleFreeze}
             >
                 {
-                  this.state.matchingTags.map(tag => (
-                    <li 
-                      key={tag.id}
-                      onClick={() => {this.selectTag(tag.title)}}
-                      className="tag"
-                    >
-                      <span>{tag.title}</span>
-                    </li>
-                  ))
+                  (matchingTags.length === 0 && inputVal.length > 0) ? 
+                    <p>No results found. Add new tag?</p> 
+                    : matchingTags.map(tag => (
+                      <li 
+                        key={tag.id}
+                        onClick={() => {this.selectTag(tag.title)}}
+                        className="tag"
+                      >
+                        <span>{tag.title}</span>
+                      </li>
+                    ))
                 }
             </ul>
           )
