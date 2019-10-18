@@ -27,7 +27,7 @@ class TagEditor extends React.Component {
     const editedTag = this.state.selectedTags[tagIdx];
     newTags.splice(tagIdx, 1);
 
-    fetchMatchingTags(editedTag)
+    fetchMatchingTags(editedTag, newTags)
       .then(matchingTags => {
         this.isEditing = false;
         this.setState({
@@ -44,7 +44,7 @@ class TagEditor extends React.Component {
   handleInput(e) {
     const newInputVal = e.target.value;
     if (newInputVal.length > 0) {
-      fetchMatchingTags(newInputVal)
+      fetchMatchingTags(newInputVal, this.state.selectedTags)
         .then(matchingTags => this.setState({
           matchingTags,
           inputVal: newInputVal

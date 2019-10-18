@@ -9,7 +9,9 @@ class Api::TagsController < ApplicationController
   end
 
   def index
-    @tags = Tag.includes(:taggings).where("title ILIKE ?", "%#{params[:inputVal]}%").limit(6)
+    @tags = Tag.includes(:taggings)
+      .where("title ILIKE ?", "%#{params[:inputVal]}%").limit(6)
+      .where.not(title: params[:selectedTags])
   end
 
   private
