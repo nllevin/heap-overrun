@@ -24,7 +24,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.includes(:views, :votes, :comments, answers: [:comments, :votes]).find(params[:id])
+    @question = Question.includes(:views, :votes, :comments, :tags, answers: [:comments, :votes]).find(params[:id])
     if !@question
       render json: "Sorry, question not found", status: 404
     end
@@ -34,9 +34,9 @@ class Api::QuestionsController < ApplicationController
 
   def index
     if params[:search] == "true"
-      @questions = Question.search(params[:query]).includes(:answers, :views, :votes, :comments)
+      @questions = Question.search(params[:query]).includes(:answers, :views, :votes, :comments, :tags)
     else
-      @questions = Question.all.includes(:answers, :views, :votes, :comments)
+      @questions = Question.all.includes(:answers, :views, :votes, :comments, :tags)
     end
   end
 
