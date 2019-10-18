@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import CommentIndexItem from "./Comment_index_item";
+import CommentIndexItem from "./comment_index_item";
 import { getPostAuthor } from "../../reducers/selectors";
 
 const mapStateToProps = (state, { comment }) => ({
