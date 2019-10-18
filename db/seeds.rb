@@ -62,7 +62,7 @@ users.each do |user|
     # add comments to random questions for each user
     question.comments.create(
       author_id: user.id,
-      body: Faker::Lorem.paragraphs(number: 1)
+      body: Faker::Lorem.paragraphs(number: 2).join("\n")
     )
   end
 
@@ -73,7 +73,7 @@ users.each do |user|
     answer = answers.sample
     answer.comments.create(
       author_id: user.id,
-      body: Faker::Lorem.paragraphs(number: 2).join(" ")
+      body: Faker::Lorem.paragraphs(number: 2).join("\n")
     )
   end
 
@@ -89,7 +89,7 @@ users.each do |user|
     end
     answers.each do |answer|
       Vote.create(
-        voter_id: user_id, 
+        voter_id: user.id, 
         votable_id: answer.id, 
         votable_type: "Answer",
         up: [true, true, false].sample
