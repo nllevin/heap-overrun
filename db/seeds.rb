@@ -33,7 +33,8 @@ Tag.create(title: "php", description: "a widely used, high-level, dynamic, objec
 Tag.create(title: "c#", description: "C# (pronounced \"see sharp\") is a high level, statically typed, multi-paradigm programming language developed by Microsoft. C# code usually targets Microsoft's .NET family of tools and run-times, which include the .NET Framework and .NET Core. Use this tag for questions about code written in C# or C#'s formal specification.")
 Tag.create(title: "java", description: "Java (not to be confused with JavaScript, JScript or JS) is a general-purpose, platform-independent, statically typed, object-oriented programming language designed to be used in conjunction with the Java Virtual Machine (JVM). \"Java platform\" is the name for a computing system that has installed tools for developing and running Java programs. Use this tag for questions referring to the Java programming language or Java platform tools.")
 
-# make users
+# make users and questions
+questions = []
 5.times do 
   user = User.create(
     username: Faker::GreekPhilosophers.unique.name, 
@@ -42,54 +43,51 @@ Tag.create(title: "java", description: "Java (not to be confused with JavaScript
   )
 
   # make different kinds of questions for each user
-  3.times do
-    question = user.questions.create(
+  2.times do
+    questions << user.questions.new(
       title: Faker::GreekPhilosophers.unique.quote,
       body: Faker::Lorem.paragraphs(number: 9).join("\n")
     )
-
-    # add 1-5 random tags to every question
-    question.tag_ids = (Tag.first.id..Tag.last.id).to_a.sample(rand(1..5))
-
-    # make views for each question
-    rand(50).times { question.views.create }
   end
 
-  3.times do
-    question = user.questions.create(
+  2.times do
+    questions << user.questions.new(
       title: Faker::Movies::StarWars.unique.quote,
       body: Faker::Lorem.paragraphs(number: 9).join("\n")
     )
-    question.tag_ids = (Tag.first.id..Tag.last.id).to_a.sample(rand(1..5))
-    rand(50).times { question.views.create }
   end
 
-  3.times do
-    question = user.questions.create(
+  2.times do
+    questions << user.questions.new(
       title: Faker::Movies::BackToTheFuture.unique.quote,
       body: Faker::Lorem.paragraphs(number: 9).join("\n")
     )
-    question.tag_ids = (Tag.first.id..Tag.last.id).to_a.sample(rand(1..5))
-    rand(50).times { question.views.create }
   end
 
-  3.times do
-    question = user.questions.create(
+  2.times do
+    questions << user.questions.new(
       title: Faker::Movies::Ghostbusters.unique.quote,
       body: Faker::Lorem.paragraphs(number: 9).join("\n")
     )
-    question.tag_ids = (Tag.first.id..Tag.last.id).to_a.sample(rand(1..5))
-    rand(50).times { question.views.create }
   end
 
-  3.times do
-    question = user.questions.create(
+  2.times do
+    questions << user.questions.new(
       title: Faker::Movies::HitchhikersGuideToTheGalaxy.unique.quote,
       body: Faker::Lorem.paragraphs(number: 9).join("\n")
     )
-    question.tag_ids = (Tag.first.id..Tag.last.id).to_a.sample(rand(1..5))
-    rand(50).times { question.views.create }
   end
+end
+
+# save the questions in random order
+questions.shuffle.each do |question|
+  question.save
+
+  # add between 1 and 5 random tags to every question
+  question.tag_ids = (Tag.first.id..Tag.last.id).to_a.sample(rand(1..5))
+
+  # add a random number of views to every question
+  rand(50).times { question.views.create }
 end
 
 users = User.all
