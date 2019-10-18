@@ -126,7 +126,12 @@ class TagEditor extends React.Component {
           <span className="tag-list">
             {
               selectedTags.slice(activeTagIdx).map((tag, idx) => (
-                <span key={idx} >{tag}</span>
+                <span key={idx} onClick={() => this.editTag(activeTagIdx + idx)}>
+                  {tag}
+                  <div className="times-icon-container" onClick={() => this.removeTag(activeTagIdx + idx)}>
+                    <i className="times-icon">x</i>
+                  </div>
+                </span>
               ))
             }
           </span>
