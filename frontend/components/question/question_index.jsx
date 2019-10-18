@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import SearchResults from "./search_results";
-import QuestionIndexItem from "./question_index_item";
+import QuestionIndexItemContainer from "./question_index_item_container";
 import SideNav from "../side_nav";
 import SideBar from "../side_bar";
 
@@ -32,7 +32,7 @@ class QuestionIndex extends React.Component {
     const headerText = this.props.location.search ? "Search Results" : "Top Questions";
 
     const questionItems = questions.map(question => (
-      <QuestionIndexItem key={question.id} question={question} />
+      <QuestionIndexItemContainer key={question.id} question={question} />
     ));
 
     return (

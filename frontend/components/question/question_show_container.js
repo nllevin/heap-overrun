@@ -2,8 +2,8 @@ import { connect } from "react-redux";
 import QuestionShow from "./question_show";
 import { fetchQuestion } from "../../actions/question_actions";
 import { 
-  getQuestion, 
-  getQuestionAuthor, 
+  getPost, 
+  getPostAuthor, 
   getAnswers,
   getComments
 } from "../../reducers/selectors";
@@ -11,9 +11,10 @@ import {
 const mapStateToProps = (state, ownProps) => {
   const questionId = parseInt(ownProps.match.params.questionId);
   return {
-    question: getQuestion(state, questionId),
+    question: getPost(state, "questions", questionId),
     answers: getAnswers(state, questionId),
-    comments: getComments(state, "Question", questionId)
+    comments: getComments(state, "Question", questionId),
+    author: getPostAuthor(state, "questions", questionId)
   }
 };
 

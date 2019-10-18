@@ -1,5 +1,5 @@
 import React from "react";
-import CommentIndexItem from "./comment_index_item";
+import CommentIndexItemContainer from "./comment_index_item_container";
 import CommentFormContainer from "./comment_form_container";
 
 class CommentIndex extends React.Component {
@@ -29,7 +29,7 @@ class CommentIndex extends React.Component {
             <ul>
               {
                 comments.map(comment => (
-                  <CommentIndexItem key={comment.id} comment={comment} />
+                  <CommentIndexItemContainer key={comment.id} comment={comment} />
                 ))
               }
             </ul>

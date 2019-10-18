@@ -77,14 +77,14 @@
   display: flex;
   font-size: 12px;
   color: #9199a1;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .question-origin a {
   margin-right: 4px;
 }
 
-.question-origin a:hover {
+/* .question-origin a:hover {
   color: #07C;
 }
 
@@ -94,7 +94,7 @@
 
 .question-origin a:last-of-type:hover {
   color: #3af;
-}
+} */
 
 .question-origin span {
   cursor: default;

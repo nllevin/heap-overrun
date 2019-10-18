@@ -5,16 +5,18 @@ export const RECEIVE_QUESTION = "RECEIVE_QUESTION";
 export const REMOVE_QUESTION = "REMOVE_QUESTION";
 export const RECEIVE_QUESTION_ERRORS = "RECEIVE_QUESTION_ERRORS";
 
-const receiveQuestions = questions => ({
+const receiveQuestions = data => ({
   type: RECEIVE_QUESTIONS,
-  questions
+  questions: data.questions,
+  authors: data.authors
 });
 
 export const receiveQuestion = data => ({
   type: RECEIVE_QUESTION,
   question: data.question,
   answers: data.answers,
-  comments: data.comments
+  comments: data.comments,
+  authors: data.authors
 });
 
 const removeQuestion = questionId => ({

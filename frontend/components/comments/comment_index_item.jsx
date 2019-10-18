@@ -1,8 +1,8 @@
 import React from "react";
 
-const CommentIndexItem = ({ comment }) => (
+const CommentIndexItem = ({ comment, author }) => (
   <li className="comment-index-item">
-    <p className="comment-index-item-body">{comment.body}</p>
+    <p className="comment-index-item-body">{comment.body} – {author.username}</p>
   </li>
 );
 

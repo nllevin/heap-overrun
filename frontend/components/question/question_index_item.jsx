@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const QuestionIndexItem = ({ question }) => (
+const QuestionIndexItem = ({ question, author }) => (
   <li className="question-index-item">
     <Link to={`/questions/${question.id}`}>
       <ul className="question-data">
@@ -29,8 +29,8 @@ const QuestionIndexItem = ({ question }) => (
         </ul>
         <span className="question-origin">
           <a>asked {question.askedAtTime}</a>
-          <a>author</a>
-          <span>15</span>
+          <a>by {author.username}</a>
+          {/* <span>15</span> */}
         </span>
       </div>
     </div>

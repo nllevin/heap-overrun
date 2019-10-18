@@ -23,3 +23,13 @@ json.set! :comments do
     end
   end
 end
+
+all_posts = [@question] + @question.answers + answer_comments + question_comments
+json.set! :authors do
+  all_posts.each do |post|
+    author = post.author
+    json.set! author.id do
+      json.partial! "api/users/user", user: author
+    end
+  end
+end

@@ -46,8 +46,8 @@ class QuestionShow extends React.Component {
                 <div className="post-signature">
                   <p>asked {question.askedAtTime}</p>
                   <div>
-                    <i className="avatar">K</i>
-                    <p>Kitty</p>
+                    <i className="avatar">{author.username[0]}</i>
+                    <p>{author.username}</p>
                   </div>
                 </div>
               </footer>
