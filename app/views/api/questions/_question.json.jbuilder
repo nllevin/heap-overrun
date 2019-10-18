@@ -11,4 +11,5 @@ else
   json.set! :currentUserVote, nil
   json.set! :currentUserVoteId, nil
 end
-json.set! :askedAtTime, question.created_at.inspect.split.take(4).join(" ")
+asked_at_time = question.created_at.inspect.split
+json.set! :askedAtTime, "#{asked_at_time.take(4).join(" ")} at #{asked_at_time[4][0..4]}"
