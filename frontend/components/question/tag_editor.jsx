@@ -139,8 +139,14 @@ class TagEditor extends React.Component {
             >
                 {
                   (matchingTags.length === 0 && inputVal.length > 0) ? 
-                    <p>No results found. Add new tag?</p> 
-                    : matchingTags.map(tag => (
+                    (
+                      <p 
+                        className="no-matching-tags"
+                        onClick={() => { this.selectTag(inputVal) }}
+                      >
+                        No results found. Add new tag?
+                      </p> 
+                    ) : matchingTags.map(tag => (
                       <li 
                         key={tag.id}
                         onClick={() => {this.selectTag(tag.title)}}
