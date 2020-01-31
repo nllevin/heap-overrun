@@ -30,7 +30,7 @@ end
 ```
 
 ### Question Search
-Question Search is implemented with PostgreSQL's built-in full text search functionality. PostgreSQL preprocesses the data by parsing the text into words, normalizing the words into lexemes with the use of a dictionary, and storing the preprocessed document in a form optimized for searching, in this case in a column called `search_vector`. A trigger causes `search_vector` to update accordingly whenever a question is added or updated. Finally, a Generalized Inverted Index (GIN) allows for speedy searches.
+Question Search is implemented with PostgreSQL's built-in full text search functionality. PostgreSQL preprocesses the data by parsing the text into words, normalizing the words into lexemes with the use of a dictionary, and storing the preprocessed document in a form optimized for searching, in this case in a column called `search_vector.` A trigger causes `search_vector` to update accordingly whenever a question is added or updated. Finally, a Generalized Inverted Index (GIN) allows for speedy searches.
 
 ![alt text](https://github.com/nllevin/heap-overrun/blob/master/app/assets/images/search_screenshot.png "Heap Overrun Search Screenshot")
 
