@@ -18,7 +18,7 @@ const sessionReducer = (state = defaultState, action) => {
         {...state} 
         : Object.assign({}, state, { filteredQuestionIds: state.filteredQuestionIds.concat(action.question.id) });
     case RECEIVE_QUESTIONS:
-      return Object.assign({}, state, { filteredQuestionIds: Object.keys(action.questions) });
+      return Object.assign({}, state, { filteredQuestionIds: Object.keys(action.questions || {}) });
     default:
       return state;
   }

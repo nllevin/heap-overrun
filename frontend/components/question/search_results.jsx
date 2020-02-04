@@ -9,7 +9,7 @@ class SearchResults extends React.Component {
       <div className="search-results">
         {count > 0 ? <p>Results for {searchParams.get("q")}</p> : ""}
         <SearchBar />
-        <h3>{count} results</h3>
+        <h3>{count} result{count === 1 ? "" : "s"}</h3>
       </div>
     );
   }
